@@ -1,6 +1,6 @@
 <?php
-include "../dao/Database.php";
-class DatabaseDemo{
+require_once "../dao/Database.php";
+class DatabaseDemo {
     //methods 
     public Database $db;
     function __construct() {
@@ -15,12 +15,10 @@ class DatabaseDemo{
     
     function selectTableTest() {
         $this->db->selectTable("product");
-        $this->db->selectTable("accessory");
-        $this->db->selectTable("category");
     }
 
     function updateTableTest() {
-        $this->db->updateTable("product", 1);
+        $this->db->updateTableById(2, new Product(1,"Anh"));
     }
 
     function deleteTableTest() {
@@ -32,42 +30,41 @@ class DatabaseDemo{
     }
 
     function initDatabase() {
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");
-        $this->db->insertTable("product", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("accessory", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
-        $this->db->insertTable("category", "ABC");        
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));
+        $this->db->insertTable("product", new Product(1,"A"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("accessory", new Accessory(1,"B"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
+        $this->db->insertTable("category", new Accessory(1,"C"));        
     }
 }
 $dbD = new DatabaseDemo();
 $dbD->insertTableTest();
 $dbD->selectTableTest();
-$dbD->initDatabase();
+$dbD->updateTableTest();
 $dbD->selectTableTest();
-
 ?>

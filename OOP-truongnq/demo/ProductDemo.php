@@ -1,5 +1,5 @@
 <?php
-include "../entity/Product.php";
+require_once "../entity/Product.php";
 class ProductDemo {
     public Product $product;
     function __construct(){

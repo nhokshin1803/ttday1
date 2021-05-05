@@ -1,11 +1,5 @@
 <?php
-require_once "BaseRow.php";
-class Accessory extends BaseRow {
-    //properties
-    public int $id;
-    public string $name;
-
-    //methods
+abstract class BaseRow {
     function __construct($id, $name) {
         $this->id = $id;
         $this->name = $name; 
